@@ -3,6 +3,8 @@ import axios from 'axios'
 import SearchBar from './components/SearchBar'
 import ImageList from './components/ImageList'
 import logo from './pixabay_logo.png'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const App =()=> {
     const  [images, setImages]= useState([]);
