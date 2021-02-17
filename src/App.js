@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import SearchBar from './components/SearchBar'
 import ImageList from './components/ImageList'
 import logo from './pixabay_logo.png'
@@ -11,11 +11,12 @@ const App =()=> {
     const ApiKey = process.env.REACT_APP_PIXABAY_APIKEY;
     const onSearchSubmit= async(term)=>{
         try{
-            const params={
-                key:ApiKey,
-                q:term
-            };
-            const response=await axios.get('https://pixabay.com/api', {params});
+            // const params={
+            //     key:ApiKey,
+            //     q:term
+            // };
+            // const response=await axios.get('https://pixabay.com/api', {params});
+            const response=await fetch(`https://pixabay.com/api/?keys=${ApiKey}&q=${term}`);
             setImages(response.data.hits);
             // console.log(response.data.hits);
             if(response.data.total===0){
